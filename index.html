@@ -1,0 +1,47 @@
+<!--请帮我写一个Html5页面，当用户输入一个值，然后点击按钮，页面会显示出用户输入的值。-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+</head>
+<body>
+<!--写一个文字行在屏幕中间，字体为“霞骛文楷”，大小为36px。-->
+<h1 style="text-align:center;font-family: '霞骛文楷';font-size:36px;">你认为macOS是一个怎么样的系统</h1>
+<!--写一个五行一列的无边框表格，居与页面中间-->
+<table border="0" align="center">
+    <tr>
+        <td>
+            <!--写一个文本框，仅显示蓝色下边框，宽度为550px，高度为36px，字体为“霞骛文楷”，大小为36px。-->
+            <input type="text" style="text-align: center; border: 0;border-bottom:3px solid blue;width:550px;height:36px;font-family:'霞骛文楷';font-size:36px;" />
+        </td>
+        <td>
+            <script type="text/javascript">
+                var input = document.getElementsByTagName('input')[0];
+                var p = document.createElement('p');
+                input.onkeydown = function (e) {
+                    if (e.keyCode === 13) {
+                        //在body中添加一个一个文本，内容为“yes,”，字体大小为36px，位置居中，字体为“霞骛文楷”，颜色为黑色。
+                        var p1 = document.createElement('p');
+                        p1.innerHTML = "You are Right!";
+                        document.body.appendChild(p1);
+                        p1.style.fontSize = "36px";
+                        p1.style.textAlign = "center";
+                        p1.style.fontFamily = "霞骛文楷";
+                        p1.style.color = "black";
+                        // 将这个p以及它的内容添加到body中，字体大小为36px，位置居中，字体为“霞骛文楷”，颜色为黑色。
+                        p.innerHTML = input.value;
+                        document.body.appendChild(p);
+                        p.style.fontSize = "36px";
+                        p.style.textAlign = "center";
+                        p.style.fontFamily = "霞骛文楷";
+                        p.style.color = "black";
+                    }
+                }
+            </script>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+
